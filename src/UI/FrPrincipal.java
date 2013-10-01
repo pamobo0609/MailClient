@@ -41,6 +41,10 @@ public class FrPrincipal extends javax.swing.JFrame {
         tabBorradores = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableBorradores = new javax.swing.JTable();
+        tabThrash = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tableThrash = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         file = new javax.swing.JMenu();
         nuevoCorreo = new javax.swing.JMenuItem();
@@ -62,6 +66,8 @@ public class FrPrincipal extends javax.swing.JFrame {
 
         btnRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/folder_new.png"))); // NOI18N
         btnRegistrar.setText("Registrar nuevo correo");
+
+        tabbedBandeja.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
 
         tableBandejaEntrada.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -98,14 +104,14 @@ public class FrPrincipal extends javax.swing.JFrame {
             tabBandejaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabBandejaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 716, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE)
                 .addContainerGap())
         );
         tabBandejaLayout.setVerticalGroup(
             tabBandejaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabBandejaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -146,14 +152,14 @@ public class FrPrincipal extends javax.swing.JFrame {
             tabElementosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabElementosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 716, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE)
                 .addContainerGap())
         );
         tabElementosLayout.setVerticalGroup(
             tabElementosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabElementosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -194,18 +200,69 @@ public class FrPrincipal extends javax.swing.JFrame {
             tabBorradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabBorradoresLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 716, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE)
                 .addContainerGap())
         );
         tabBorradoresLayout.setVerticalGroup(
             tabBorradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabBorradoresLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         tabbedBandeja.addTab("Borradores", tabBorradores);
+
+        tableThrash.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Recibido de:", "Asunto"
+            }
+        ));
+        jScrollPane4.setViewportView(tableThrash);
+
+        javax.swing.GroupLayout tabThrashLayout = new javax.swing.GroupLayout(tabThrash);
+        tabThrash.setLayout(tabThrashLayout);
+        tabThrashLayout.setHorizontalGroup(
+            tabThrashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabThrashLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        tabThrashLayout.setVerticalGroup(
+            tabThrashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabThrashLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(181, 181, 181))
+        );
+
+        tabbedBandeja.addTab("Thrash", tabThrash);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/delete.png"))); // NOI18N
+        jButton1.setText("Eliminar");
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
@@ -214,15 +271,20 @@ public class FrPrincipal extends javax.swing.JFrame {
             .addGroup(panelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tabbedBandeja)
                     .addGroup(panelPrincipalLayout.createSequentialGroup()
                         .addComponent(btnNuevoCorreo)
                         .addGap(18, 18, 18)
                         .addComponent(btnNuevoContacto)
                         .addGap(18, 18, 18)
                         .addComponent(btnRegistrar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
+                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tabbedBandeja, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton1)))
+                        .addGap(50, 50, 50))))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,8 +297,10 @@ public class FrPrincipal extends javax.swing.JFrame {
                         .addComponent(btnNuevoContacto, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(tabbedBandeja, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(tabbedBandeja, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12))
         );
 
         file.setText("File");
@@ -346,9 +410,11 @@ public class FrPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JMenu edit;
     private javax.swing.JMenu file;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JMenuItem mantenimiento;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem nuevaBandeja;
@@ -358,9 +424,11 @@ public class FrPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel tabBandeja;
     private javax.swing.JPanel tabBorradores;
     private javax.swing.JPanel tabElementos;
+    private javax.swing.JPanel tabThrash;
     private javax.swing.JTabbedPane tabbedBandeja;
     private javax.swing.JTable tableBandejaEntrada;
     private javax.swing.JTable tableBorradores;
     private javax.swing.JTable tableElementosEnviados;
+    private javax.swing.JTable tableThrash;
     // End of variables declaration//GEN-END:variables
 }
