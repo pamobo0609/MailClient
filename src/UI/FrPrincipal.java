@@ -27,6 +27,7 @@ public class FrPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         panelPrincipal = new javax.swing.JPanel();
         btnNuevoCorreo = new javax.swing.JButton();
         btnNuevoContacto = new javax.swing.JButton();
@@ -48,12 +49,15 @@ public class FrPrincipal extends javax.swing.JFrame {
         menuBar = new javax.swing.JMenuBar();
         file = new javax.swing.JMenu();
         nuevoCorreo = new javax.swing.JMenuItem();
-        nuevoContacto = new javax.swing.JMenuItem();
         nuevaBandeja = new javax.swing.JMenuItem();
+        separador = new javax.swing.JPopupMenu.Separator();
+        listaContactos = new javax.swing.JMenuItem();
         edit = new javax.swing.JMenu();
         mantenimiento = new javax.swing.JMenuItem();
         acerca = new javax.swing.JMenu();
         acercaD = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -255,8 +259,8 @@ public class FrPrincipal extends javax.swing.JFrame {
             tabThrashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabThrashLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(181, 181, 181))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(177, 177, 177))
         );
 
         tabbedBandeja.addTab("Thrash", tabThrash);
@@ -310,19 +314,15 @@ public class FrPrincipal extends javax.swing.JFrame {
         nuevoCorreo.setText("Nuevo correo...");
         file.add(nuevoCorreo);
 
-        nuevoContacto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        nuevoContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/folder_new.png"))); // NOI18N
-        nuevoContacto.setText("Nuevo contacto de correo...");
-        nuevoContacto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nuevoContactoActionPerformed(evt);
-            }
-        });
-        file.add(nuevoContacto);
-
         nuevaBandeja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/folder_new.png"))); // NOI18N
         nuevaBandeja.setText("Registrar correo");
         file.add(nuevaBandeja);
+        file.add(separador);
+
+        listaContactos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        listaContactos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/preferences_contact_list.png"))); // NOI18N
+        listaContactos.setText("Contactos");
+        file.add(listaContactos);
 
         menuBar.add(file);
 
@@ -363,10 +363,6 @@ public class FrPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void nuevoContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoContactoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nuevoContactoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -411,16 +407,18 @@ public class FrPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu edit;
     private javax.swing.JMenu file;
     private javax.swing.JButton jButton1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JMenuItem listaContactos;
     private javax.swing.JMenuItem mantenimiento;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem nuevaBandeja;
-    private javax.swing.JMenuItem nuevoContacto;
     private javax.swing.JMenuItem nuevoCorreo;
     private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JPopupMenu.Separator separador;
     private javax.swing.JPanel tabBandeja;
     private javax.swing.JPanel tabBorradores;
     private javax.swing.JPanel tabElementos;
