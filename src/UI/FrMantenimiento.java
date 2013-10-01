@@ -27,20 +27,101 @@ public class FrMantenimiento extends javax.swing.JFrame {
     private void initComponents() {
 
         panelMPrincipal = new javax.swing.JPanel();
+        lblCorreosRegis = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listCorreos = new javax.swing.JList();
+        btnEditar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        lblCorreo = new javax.swing.JLabel();
+        txtCorreo = new javax.swing.JTextField();
+        lblApodo = new javax.swing.JLabel();
+        txtApodo = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panelMPrincipal.setBorder(javax.swing.BorderFactory.createTitledBorder("Mantenimiento"));
 
+        lblCorreosRegis.setText("Correo(s) registrados:");
+
+        listCorreos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(listCorreos);
+
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/pencil3.png"))); // NOI18N
+        btnEditar.setText("Editar");
+
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/delete.png"))); // NOI18N
+        btnEliminar.setText("Eliminar...");
+
+        lblCorreo.setText("Correo:");
+
+        lblApodo.setText("Apodo:");
+
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/save_all.png"))); // NOI18N
+        btnGuardar.setText("Guardar cambios");
+
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/cancel2.png"))); // NOI18N
+        btnCancelar.setText("Cancelar");
+
         javax.swing.GroupLayout panelMPrincipalLayout = new javax.swing.GroupLayout(panelMPrincipal);
         panelMPrincipal.setLayout(panelMPrincipalLayout);
         panelMPrincipalLayout.setHorizontalGroup(
             panelMPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 368, Short.MAX_VALUE)
+            .addGroup(panelMPrincipalLayout.createSequentialGroup()
+                .addGroup(panelMPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelMPrincipalLayout.createSequentialGroup()
+                        .addComponent(lblCorreo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelMPrincipalLayout.createSequentialGroup()
+                        .addComponent(lblApodo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtApodo, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(panelMPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelMPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelMPrincipalLayout.createSequentialGroup()
+                        .addComponent(lblCorreosRegis)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelMPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(panelMPrincipalLayout.createSequentialGroup()
+                                .addComponent(btnEditar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnEliminar))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMPrincipalLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnCancelar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnGuardar)))
+                .addContainerGap())
         );
         panelMPrincipalLayout.setVerticalGroup(
             panelMPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 251, Short.MAX_VALUE)
+            .addGroup(panelMPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelMPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCorreosRegis)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelMPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnEditar)
+                    .addComponent(btnEliminar))
+                .addGap(18, 18, 18)
+                .addGroup(panelMPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCorreo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelMPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtApodo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblApodo))
+                .addGap(18, 18, 18)
+                .addGroup(panelMPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -98,6 +179,17 @@ public class FrMantenimiento extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblApodo;
+    private javax.swing.JLabel lblCorreo;
+    private javax.swing.JLabel lblCorreosRegis;
+    private javax.swing.JList listCorreos;
     private javax.swing.JPanel panelMPrincipal;
+    private javax.swing.JTextField txtApodo;
+    private javax.swing.JTextField txtCorreo;
     // End of variables declaration//GEN-END:variables
 }

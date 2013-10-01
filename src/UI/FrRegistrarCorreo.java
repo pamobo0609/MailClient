@@ -51,6 +51,8 @@ public class FrRegistrarCorreo extends javax.swing.JInternalFrame {
 
         lblApodo.setText("Apodo:");
 
+        cbCliente.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "gmail.com", "hotmail.com" }));
+
         btnComprobar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/symbol_check.png"))); // NOI18N
         btnComprobar.setText("Comprobar!");
 
