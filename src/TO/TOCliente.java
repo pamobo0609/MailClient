@@ -2,25 +2,27 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package BL;
+package TO;
 
+import BL.Contacto;
+import BL.Mail;
 import java.util.ArrayList;
 
 /**
  *
  * @author Jose Pablo MB
  */
-public class Cliente {
+public class TOCliente {
     private ArrayList<Mail> bandejaEntrada;
     private ArrayList<Mail> elementosEnviados;
     private ArrayList<Mail> borradores;
     private ArrayList<Mail> thrash;
     private ArrayList<Contacto> contactos;
 
-    public Cliente() {
+    public TOCliente() {
     }
 
-    public Cliente(ArrayList<Mail> bandejaEntrada, ArrayList<Mail> elementosEnviados, ArrayList<Mail> borradores, ArrayList<Mail> thrash, ArrayList<Contacto> contactos) {
+    public TOCliente(ArrayList<Mail> bandejaEntrada, ArrayList<Mail> elementosEnviados, ArrayList<Mail> borradores, ArrayList<Mail> thrash, ArrayList<Contacto> contactos) {
         this.bandejaEntrada = bandejaEntrada;
         this.elementosEnviados = elementosEnviados;
         this.borradores = borradores;
@@ -70,6 +72,6 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "bandejaEntrada=" + bandejaEntrada + ", elementosEnviados=" + elementosEnviados + ", borradores=" + borradores + ", thrash=" + thrash + ", contactos=" + contactos + '}';
-    }
+        return "TOCliente{" + "bandejaEntrada=" + bandejaEntrada + ", elementosEnviados=" + elementosEnviados + ", borradores=" + borradores + ", thrash=" + thrash + ", contactos=" + contactos + '}';
+    }        
 }
