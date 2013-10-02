@@ -4,6 +4,10 @@
  */
 package UI;
 
+import BL.Cliente;
+import BL.Contacto;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jose Pablo MB
@@ -48,9 +52,19 @@ public class FrNuevoContacto extends javax.swing.JInternalFrame {
 
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/folder_new.png"))); // NOI18N
         btnAgregar.setText("Agregar contacto!");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/cancel2.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         lblContactos.setText("Contactos previamente registrados:");
 
@@ -85,9 +99,19 @@ public class FrNuevoContacto extends javax.swing.JInternalFrame {
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/delete.png"))); // NOI18N
         btnEliminar.setText("Eliminar contacto");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         btnGuardarCambios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/save_all.png"))); // NOI18N
         btnGuardarCambios.setText("Guardar cambios");
+        btnGuardarCambios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarCambiosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelNCPrincipalLayout = new javax.swing.GroupLayout(panelNCPrincipal);
         panelNCPrincipal.setLayout(panelNCPrincipalLayout);
@@ -165,6 +189,34 @@ public class FrNuevoContacto extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        Contacto contacto = new Contacto(txtCorreo.getText(), txtApodo.getText());
+        if(contacto.agregarContacto())
+            JOptionPane.showMessageDialog(null, "Éxito al guardar!","Alerta!",JOptionPane.INFORMATION_MESSAGE);
+        else
+            JOptionPane.showMessageDialog(null, "Error al guardar,intente de nuevo","Alerta!",JOptionPane.ERROR);
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        txtApodo.setText("");
+        txtCorreo.setText("");
+        btnGuardarCambios.disable();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnGuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCambiosActionPerformed
+        txtCorreo.enable(false);
+        Contacto c = new Contacto(txtCorreo.getText(), txtApodo.getText());
+        if(c.editarContacto())
+            JOptionPane.showMessageDialog(null, "Éxito al editar!","Alerta!",JOptionPane.INFORMATION_MESSAGE);
+        else
+            JOptionPane.showMessageDialog(null, "Error al editar,intente de nuevo","Alerta!",JOptionPane.ERROR);
+    }//GEN-LAST:event_btnGuardarCambiosActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnCancelar;

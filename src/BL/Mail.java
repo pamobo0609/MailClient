@@ -69,4 +69,8 @@ public class Mail {
     public String toString() {
         return "Mail{" + "para=" + para + ", asunto=" + asunto + ", cc=" + cc + ", archivo=" + archivo + ", cuerpo=" + cuerpo + '}';
     }
+
+    public Boolean enviar() {
+        return true;
+    }
 }

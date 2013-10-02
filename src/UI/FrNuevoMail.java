@@ -4,6 +4,11 @@
  */
 package UI;
 
+import BL.Mail;
+import java.io.InputStream;
+import javax.mail.internet.MimeBodyPart;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jose Pablo MB
@@ -61,11 +66,21 @@ public class FrNuevoMail extends javax.swing.JInternalFrame {
 
         btnEnviar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/send.png"))); // NOI18N
         btnEnviar.setText("Enviar!");
+        btnEnviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnviarActionPerformed(evt);
+            }
+        });
 
         lblAsunto.setText("Asunto:");
 
         btnGuardarBorradores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/save_all.png"))); // NOI18N
         btnGuardarBorradores.setText("Guardar en borradores");
+        btnGuardarBorradores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarBorradoresActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelNMPrincipalLayout = new javax.swing.GroupLayout(panelNMPrincipal);
         panelNMPrincipal.setLayout(panelNMPrincipalLayout);
@@ -152,11 +167,40 @@ public class FrNuevoMail extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panelNMPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
+        Mail nuevoCorreo = new Mail();
+        if(chCC.isSelected()){
+            btnCC.enable(true);
+            txtCC.enable(true);
+            
+            nuevoCorreo.setCc(txtCC.getText());
+        }
+        if(chAdjuntar.isSelected()){
+            btnAdjuntar.enable(true);
+            txtArchivo.enable(true);
+            
+            
+        }
+        nuevoCorreo.setAsunto(txtAsunto.getText());
+        nuevoCorreo.setCuerpo(txtCuerpo.getText());
+        nuevoCorreo.setPara(txtPara.getText());
+        
+        if(nuevoCorreo.enviar())
+            JOptionPane.showMessageDialog(null, "Mensaje enviado!","Alerta!", JOptionPane.INFORMATION_MESSAGE);
+        else
+            JOptionPane.showMessageDialog(null, "Error al enviar el mensaje,intente de nuevo","Error!",JOptionPane.ERROR);
+    }//GEN-LAST:event_btnEnviarActionPerformed
+
+    private void btnGuardarBorradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarBorradoresActionPerformed
+        
+    }//GEN-LAST:event_btnGuardarBorradoresActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdjuntar;
     private javax.swing.JButton btnCC;

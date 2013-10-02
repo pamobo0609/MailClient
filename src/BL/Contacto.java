@@ -39,4 +39,22 @@ public class Contacto {
     public String toString() {
         return "Contacto{" + "correoElectronico=" + correoElectronico + ", apodo=" + apodo + '}';
     }        
+    
+    public boolean agregarContacto(){
+        if(Cliente.getInstancia().getContactos().indexOf(correoElectronico) == -1){
+            Cliente.getInstancia().getContactos().add(this);
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public boolean editarContacto() {
+        int donde = Cliente.getInstancia().getContactos().indexOf(correoElectronico);
+        Cliente.getInstancia().getContactos().remove(donde);        
+        Cliente.getInstancia().getContactos().add(this);        
+        return true;
+    }
+    
 }

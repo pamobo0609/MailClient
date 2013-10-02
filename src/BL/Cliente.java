@@ -11,16 +11,18 @@ import java.util.ArrayList;
  * @author Jose Pablo MB
  */
 public class Cliente {
+    private static Cliente cliente = null;
+    
     private ArrayList<Mail> bandejaEntrada;
     private ArrayList<Mail> elementosEnviados;
     private ArrayList<Mail> borradores;
     private ArrayList<Mail> thrash;
     private ArrayList<Contacto> contactos;
 
-    public Cliente() {
+    private Cliente() {
     }
 
-    public Cliente(ArrayList<Mail> bandejaEntrada, ArrayList<Mail> elementosEnviados, ArrayList<Mail> borradores, ArrayList<Mail> thrash, ArrayList<Contacto> contactos) {
+    private Cliente(ArrayList<Mail> bandejaEntrada, ArrayList<Mail> elementosEnviados, ArrayList<Mail> borradores, ArrayList<Mail> thrash, ArrayList<Contacto> contactos) {
         this.bandejaEntrada = bandejaEntrada;
         this.elementosEnviados = elementosEnviados;
         this.borradores = borradores;
@@ -28,6 +30,13 @@ public class Cliente {
         this.contactos = contactos;
     }
 
+    public static Cliente getInstancia(){
+        if(cliente == null){
+            cliente = new Cliente();
+        }
+        return cliente;
+    }
+    
     public ArrayList<Mail> getBandejaEntrada() {
         return bandejaEntrada;
     }
