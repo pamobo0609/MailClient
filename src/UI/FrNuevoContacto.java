@@ -4,7 +4,6 @@
  */
 package UI;
 
-import BL.Cliente;
 import BL.Contacto;
 import javax.swing.JOptionPane;
 
@@ -20,6 +19,9 @@ public class FrNuevoContacto extends javax.swing.JInternalFrame {
     public FrNuevoContacto() {
         initComponents();
         this.btnGuardarCambios.setVisible(false);
+        this.btnEliminar.enable(false);
+        
+        this.setClosable(true);
     }
 
     /**

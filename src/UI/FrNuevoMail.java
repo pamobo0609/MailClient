@@ -5,8 +5,6 @@
 package UI;
 
 import BL.Mail;
-import java.io.InputStream;
-import javax.mail.internet.MimeBodyPart;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,7 +19,11 @@ public class FrNuevoMail extends javax.swing.JInternalFrame {
     public FrNuevoMail() {
         initComponents();
         btnCC.enable(false);
-        txtAsunto.enable(false);
+        txtCC.enable(false);
+        btnAdjuntar.enable(false);
+        txtArchivo.enable(false);
+        
+        this.setClosable(true);
     }
 
     /**
@@ -52,6 +54,8 @@ public class FrNuevoMail extends javax.swing.JInternalFrame {
         btnPara.setText("Para...");
 
         btnCC.setText("CC...");
+
+        txtAsunto.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         chCC.setText("Agregar CC?");
 
@@ -167,7 +171,7 @@ public class FrNuevoMail extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panelNMPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();

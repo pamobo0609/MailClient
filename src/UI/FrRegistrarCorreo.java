@@ -15,6 +15,7 @@ public class FrRegistrarCorreo extends javax.swing.JInternalFrame {
      */
     public FrRegistrarCorreo() {
         initComponents();
+        this.setClosable(true);
     }
 
     /**

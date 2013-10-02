@@ -15,13 +15,13 @@ public class FrMantenimiento extends javax.swing.JFrame {
      */
     public FrMantenimiento() {
         initComponents();
-        lblCorreo.enable(false);
-        txtCorreo.enable(false);
-        lblApodo.enable(false);
-        txtApodo.enable(false);
-        btnCancelar.enable(false);
-        btnGuardar.enable(false);
-        btnEditar.enable(false);
+        lblCorreo.setVisible(false);
+        txtCorreo.setVisible(false);
+        lblApodo.setVisible(false);
+        txtApodo.setVisible(false);
+        btnCancelar.setVisible(false);
+        btnGuardar.setVisible(false);
+        btnEditar.enable(false);       
     }
 
     /**
@@ -70,6 +70,11 @@ public class FrMantenimiento extends javax.swing.JFrame {
 
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/cancel2.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelMPrincipalLayout = new javax.swing.GroupLayout(panelMPrincipal);
         panelMPrincipal.setLayout(panelMPrincipalLayout);
@@ -150,6 +155,15 @@ public class FrMantenimiento extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        txtCorreo.setVisible(false);
+        lblCorreo.setVisible(false);
+        txtApodo.setVisible(false);
+        lblApodo.setVisible(false);
+        btnCancelar.setVisible(false);
+        btnGuardar.setVisible(true);
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
